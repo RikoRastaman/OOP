@@ -1,11 +1,11 @@
 ﻿  pch.cpp
   compare.cpp
-  compare.vcxproj -> C:\Users\RIKO\Desktop\oop\lw1_v2\compare\Debug\compare.exe
+  compare.vcxproj -> C:\Users\Admin\Documents\GitHub\OOP\lw1_v2\compare\Debug\compare.exe
   Running test
   First Test
-  Сравнение файлов C:\USERS\RIKO\APPDATA\LOCAL\TEMP\out.txt и COMPARE-EQUAL-OUT.TXT
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и COMPARE-EQUAL-OUT.TXT
   FC: различия не найдены
   
-  Сравнение файлов C:\USERS\RIKO\APPDATA\LOCAL\TEMP\out.txt и COMPARE-LINE2DEFERENT-OUT.TXT
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и COMPARE-LINE2DEFERENT-OUT.TXT
   FC: различия не найдены
   
