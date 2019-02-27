@@ -1,0 +1,21 @@
+﻿  pch.cpp
+  flipbyte.cpp
+  flipbyte.vcxproj -> C:\Users\Admin\Documents\GitHub\OOP\lw1_t2\flipbyte\Debug\flipbyte.exe
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и 6.TXT
+  FC: различия не найдены
+  
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и 255.TXT
+  FC: различия не найдены
+  
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и 0.TXT
+  FC: различия не найдены
+  
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и 97.TXT
+  FC: различия не найдены
+  
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и OUT_OF_RANGE.TXT
+  FC: различия не найдены
+  
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и LINE_NOT_A_NUMBER.TXT
+  FC: различия не найдены
+  

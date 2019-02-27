@@ -1,0 +1,1 @@
+Entered line is not number, please enter number in range 0-255.
