@@ -1,0 +1,1 @@
+Determinant is zero, matrix can't be inversed

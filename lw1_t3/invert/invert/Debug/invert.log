@@ -1,13 +1,13 @@
-﻿  invert.cpp
+﻿  pch.cpp
+  invert.cpp
   invert.vcxproj -> C:\Users\Admin\Documents\GitHub\OOP\lw1_t3\invert\Debug\invert.exe
   Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и OUTPUT_1ST_MATRIX.TXT
-  ***** C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt
-  0.571   -0.143  -1.286  
-  -0.286  0.571   0.143   
-  0.143   -0.286  0.429   
-  ***** OUTPUT_1ST_MATRIX.TXT
-  0.571   -0.143  -1.29
-  -0.286  0.571   0.143
-  0.143   -0.286  0.429
-  *****
+  FC: различия не найдены
   
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и OUTPUT_ZERO.TXT
+  FC: различия не найдены
+  
+  Сравнение файлов C:\USERS\ADMIN\APPDATA\LOCAL\TEMP\out.txt и OUTPUT_ARGUMENT_ERROR.TXT
+  FC: различия не найдены
+  
+  "Tests passed!"
