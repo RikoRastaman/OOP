@@ -4,8 +4,10 @@
 #include <algorithm>
 #include <iterator>
 #include <iomanip>
+#include <string>
 
 using namespace std;
+const string EMPTY = "Array is empty.";
 
 void readFromInput(vector<float>& massivForRead)
 {
@@ -34,14 +36,24 @@ float findMinimum(vector<float>& massiv)
 	{
 		return *std::min_element(massiv.begin(), massiv.end());
 	}
+	else
+	{
+		cout << EMPTY << "\n";
+		exit(1);
+	}
 }
 
 void multiplicMassiv(vector<float>& massiv, float multiplicator)
 {
-	for (int i = 0; i < massiv.size(); ++i)
+	for (size_t i = 0; i < massiv.size(); ++i)
 	{
 		massiv[i] = massiv[i] * multiplicator;
 	}
+}
+
+void sortMassiv(vector<float>& massiv)
+{
+	std::sort (massiv.begin(), massiv.end());
 }
 
 int main()
@@ -51,5 +63,6 @@ int main()
 	readFromInput(massiv);
 	findMinimum(massiv);
 	multiplicMassiv(massiv, findMinimum(massiv));
+	sortMassiv(massiv);
 	printMassiv(massiv);
 }
