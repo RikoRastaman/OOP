@@ -84,8 +84,6 @@ int main(int argc, char* argv[])
 {
 	float mat[3][3] = {};
 	float result[3][3] = {};
-	int i = 0;
-	int j = 0;
 	float determinant = 0;	
 	checkArguments(argc);
 	std::fstream input(argv[1]);
