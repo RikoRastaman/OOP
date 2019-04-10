@@ -2,10 +2,19 @@
 #include <iostream>
 #include <set>
 #include <string>
+#include <algorithm>
+#include <iterator>
 
 using namespace std;
 
 const string INITIAL_MESSAGE = "Please enter N, max number of sets.";
+
+std::set<int> CrossSet(std::set<int> const& set1, std::set<int> const& set2)
+{
+	set<int>intersection = {};
+	set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(intersection, intersection.begin()));
+	return intersection;
+}
 
 int SumDigit(int n)
 {
@@ -23,9 +32,13 @@ int main()
 {
 	set<int>noResidue = {};
 	set<int>evenSum = {};
+	set<int>intersection = {};
 
-	cout >> INITIAL_MESSAGE >> endl;
-	int maxNumber = 100;
+	int maxNumber = 0;
+
+	cout << INITIAL_MESSAGE << endl;
+	cin >> maxNumber;
+
 
 	for(int n = 1; n <= maxNumber; n++)
 	{
@@ -43,15 +56,18 @@ int main()
 		}
 	}
 
+	intersection = CrossSet(noResidue, evenSum);
+
 	set<int>::iterator it;
+
 	/*for (it = noResidue.begin(); it != noResidue.end(); it++)
 	{
 		cout << *it << endl;
 	}*/
 
-	//for (it = evenSum.begin(); it != evenSum.end(); it++)
-	//{
-	//cout << *it << endl;
-	//}
+	for (it = intersection.begin(); it != intersection.end(); it++)
+	{
+	cout << *it << ' ';
+	}
 		
 }
