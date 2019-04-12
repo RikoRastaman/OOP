@@ -1,21 +1,73 @@
-﻿// CrossSet.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
-
-#include "pch.h"
+﻿#include "pch.h"
 #include <iostream>
+#include <set>
+#include <string>
+#include <algorithm>
+#include <iterator>
+
+using namespace std;
+
+const string INITIAL_MESSAGE = "Please enter N, max number of sets.";
+
+std::set<int> CrossSet(std::set<int> const& set1, std::set<int> const& set2)
+{
+	set<int>intersection = {};
+	set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(intersection, intersection.begin()));
+	return intersection;
+}
+
+int SumDigit(int n)
+{
+	int sum = 0;
+	do
+	{
+		sum += (n % 10);
+		n /= 10;
+	}
+	while (n > 0);
+	return sum;
+};
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	set<int>noResidue = {};
+	set<int>evenSum = {};
+	set<int>intersection = {};
+
+	int maxNumber = 0;
+
+	cout << INITIAL_MESSAGE << endl;
+	cin >> maxNumber;
+
+
+	for(int n = 1; n <= maxNumber; n++)
+	{
+		if(n % SumDigit(n) == 0)
+		{
+			noResidue.insert(n);
+		}
+	}
+
+	for (int n = 1; n <= maxNumber; n++)
+	{
+		if (SumDigit(n) % 2 == 0)
+		{
+			evenSum.insert(n);
+		}
+	}
+
+	intersection = CrossSet(noResidue, evenSum);
+
+	set<int>::iterator it;
+
+	/*for (it = noResidue.begin(); it != noResidue.end(); it++)
+	{
+		cout << *it << endl;
+	}*/
+
+	for (it = intersection.begin(); it != intersection.end(); it++)
+	{
+	cout << *it << ' ';
+	}
+		
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
