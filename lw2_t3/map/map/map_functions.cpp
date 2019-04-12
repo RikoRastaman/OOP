@@ -1,8 +1,8 @@
-#include"pch.h"
+#include "pch.h"
 #include <iostream>
-#include<string>
-#include<map>
-#include<iterator>
+#include <string>
+#include <map>
+#include <iterator>
 #include <algorithm>
 
 std::string uppercaseToLower(std::string str)
@@ -13,13 +13,16 @@ std::string uppercaseToLower(std::string str)
 
 void checkInDictionary(std::map<std::string, int>&dictionary, std::string str)
 {
-	if ((dictionary.find(str)) == dictionary.end())
+	if(str != "")
 	{
-		dictionary.insert(std::pair<std::string, int>(str, 1));
-	}
-	else
-	{
-		dictionary.at(str) += 1;
+		if ((dictionary.find(str)) == dictionary.end())
+		{
+			dictionary.insert(std::pair<std::string, int>(str, 1));
+		}
+		else
+		{
+			dictionary.at(str) += 1;
+		}
 	}
 }
 

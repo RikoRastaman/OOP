@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 #include <iostream>
-#include<string>
+#include <string>
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 #include "lw2_t2/FindAndReplace/FindAndReplace/FindAndReplace_functions.h"

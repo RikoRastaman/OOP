@@ -1,73 +1,39 @@
 ﻿#include "pch.h"
+#include "CrossSet_functions.h"
 #include <iostream>
 #include <set>
 #include <string>
-#include <algorithm>
-#include <iterator>
 
-using namespace std;
-
-const string INITIAL_MESSAGE = "Please enter N, max number of sets.";
-
-std::set<int> CrossSet(std::set<int> const& set1, std::set<int> const& set2)
-{
-	set<int>intersection = {};
-	set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(intersection, intersection.begin()));
-	return intersection;
-}
-
-int SumDigit(int n)
-{
-	int sum = 0;
-	do
-	{
-		sum += (n % 10);
-		n /= 10;
-	}
-	while (n > 0);
-	return sum;
-};
+const std::string INITIAL_MESSAGE = "Please enter N, max number of sets.";
+const std::string FIST_SET_MESSAGE = "First set of sums mod = 0:";
+const std::string SECOND_SET_MESSAGE = "Second set of even sums: ";
+const std::string CROSS_SET_MESSAGE = "Cross of sets: ";
 
 int main()
 {
-	set<int>noResidue = {};
-	set<int>evenSum = {};
-	set<int>intersection = {};
-
+	std::set<int>noRemainder = {};
+	std::set<int>evenSum = {};
+	std::set<int>intersection = {};
 	int maxNumber = 0;
-
-	cout << INITIAL_MESSAGE << endl;
-	cin >> maxNumber;
-
-
-	for(int n = 1; n <= maxNumber; n++)
+	std::cout << INITIAL_MESSAGE << std::endl;
+	while (std::cin >> maxNumber)
 	{
-		if(n % SumDigit(n) == 0)
+		if (std::cin.fail())
 		{
-			noResidue.insert(n);
+			return 0;
 		}
+		noRemainder = addSumWithNoRemainder(noRemainder, maxNumber);
+		std::cout << FIST_SET_MESSAGE << std::endl;
+		printSet(noRemainder);
+		std::cout << std::endl;
+		evenSum = addEvenSum(evenSum, maxNumber);
+		std::cout << SECOND_SET_MESSAGE << std::endl;
+		printSet(evenSum);
+		std::cout << std::endl;
+		intersection = CrossSet(noRemainder, evenSum);
+		std::cout << CROSS_SET_MESSAGE;
+		std::cout << std::endl;
+		printSet(intersection);
+		std::cout << std::endl;
 	}
-
-	for (int n = 1; n <= maxNumber; n++)
-	{
-		if (SumDigit(n) % 2 == 0)
-		{
-			evenSum.insert(n);
-		}
-	}
-
-	intersection = CrossSet(noResidue, evenSum);
-
-	set<int>::iterator it;
-
-	/*for (it = noResidue.begin(); it != noResidue.end(); it++)
-	{
-		cout << *it << endl;
-	}*/
-
-	for (it = intersection.begin(); it != intersection.end(); it++)
-	{
-	cout << *it << ' ';
-	}
-		
 }
