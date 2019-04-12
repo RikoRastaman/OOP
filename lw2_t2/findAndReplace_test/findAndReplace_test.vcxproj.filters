@@ -18,18 +18,18 @@
     <ClInclude Include="pch.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="FindAndReplace_functions.h">
-      <Filter>Исходные файлы</Filter>
+    <ClInclude Include="..\FindAndReplace\FindAndReplace\FindAndReplace_functions.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="FindAndReplace.cpp">
+    <ClCompile Include="findAndReplace_test.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="FindAndReplace_functions.cpp">
+    <ClCompile Include="..\FindAndReplace\FindAndReplace\FindAndReplace_functions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
