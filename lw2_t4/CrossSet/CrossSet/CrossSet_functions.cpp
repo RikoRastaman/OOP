@@ -5,13 +5,6 @@
 #include <algorithm>
 #include <iterator>
 
-std::set<int> CrossSet(std::set<int> const& set1, std::set<int> const& set2)
-{
-	std::set<int>intersection = {};
-	set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(intersection, intersection.begin()));
-	return intersection;
-}
-
 int sumDigit(int n)
 {
 	int sum = 0;
@@ -22,6 +15,13 @@ int sumDigit(int n)
 	} while (n > 0);
 	return sum;
 };
+
+std::set<int> CrossSet(std::set<int> const& set1, std::set<int> const& set2)
+{
+	std::set<int>intersection = {};
+	set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), std::inserter(intersection, intersection.begin()));
+	return intersection;
+}
 
 std::set<int> addSumWithNoRemainder(std::set<int>&noRemainder, int maxNumber)
 {
