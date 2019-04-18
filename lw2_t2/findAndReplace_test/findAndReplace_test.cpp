@@ -44,3 +44,5 @@ TEST_CASE("find and replace with empty replace string")
 	originalString = findAndReplace(originalString, searchString, replaceString);
 	REQUIRE(originalString == editedString);
 }
+
+--заменить 2 пробела на 1 и 1 пробел на 2 , в строке из 10 пробелов

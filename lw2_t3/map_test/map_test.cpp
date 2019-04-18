@@ -3,16 +3,16 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch.hpp>
 
-TEST_CASE("apper case to lower case")
+TEST_CASE("Upper case to lower case")
 {
-	std::string str1 = "APPER CASE";
-	std::string str2 = "apper case";
+	std::string str1 = "UPPER CASE";
+	std::string str2 = "upper case";
 	str1 = uppercaseToLower(str1);
 
 	REQUIRE( str1 == str2);
 }
 
-TEST_CASE("apper case with empty string")
+TEST_CASE("Upper case with empty string")
 {
 	std::string str1 = "";
 	std::string str2 = "";
