@@ -6,6 +6,7 @@
 int main()
 {
 	car car1;
-
-	car1.SetGear(1);
+	//car1.TurnOnEngine();
+	//car1.TurnOffEngine();
+	std::cout << car1.getDirection() << std::endl;
 }
