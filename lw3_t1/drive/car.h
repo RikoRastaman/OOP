@@ -20,7 +20,7 @@ public:
 private:
 	
 
-	enum class Gear { REVERSE, NEUTRAL, FIRST, SECOND, THIRD, FOURTH, FIFTH };
+	enum class Gear { REVERSE = -1, NEUTRAL, FIRST, SECOND, THIRD, FOURTH, FIFTH };
 	enum class Direction { FORWARD, STAND_STILL, BACKWARD };
 	bool m_engine;
 	Gear m_gear;

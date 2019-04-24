@@ -101,14 +101,20 @@ bool car::SetSpeed(int speed)
 
 bool car::SetGear(int gear)
 {
+	//if (m_gear == Gear(gear))
+	//{
+	//	return true;
+	//}
+
 	if (!m_engine)
 	{
 		return false;
 	}
+
 	switch(gear)
 	{ 
 	case(-1):
-		if (m_speed == 0 )
+		if (m_speed == 0)
 		{
 			m_gear = Gear::REVERSE;
 			return true;
@@ -121,8 +127,22 @@ bool car::SetGear(int gear)
 		m_gear = Gear::NEUTRAL;
 		return true;
 	case(1):
-	
-
+		m_gear = Gear::FIRST;
+		return true;
+	case(2):
+		m_gear = Gear::SECOND;
+		return true;
+	case(3):
+		m_gear = Gear::THIRD;
+		return true;
+	case(4):
+		m_gear = Gear::FOURTH;
+		return true;
+	case(5):
+		m_gear = Gear::FIFTH;
+		return true;
+	default:
+		return false;
 	}
 }
 
