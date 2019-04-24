@@ -90,18 +90,40 @@ bool car::TurnOffEngine()
 		m_engine = false;
 		return true;
 	}
-	return true; //add
+	return true;
 }
 
 bool car::SetSpeed(int speed)
 {
+	m_speed = speed;
 	return true; //add
 }
 
 bool car::SetGear(int gear)
 {
-	m_gear = Gear(gear);
-	return true;
+	if (!m_engine)
+	{
+		return false;
+	}
+	switch(gear)
+	{ 
+	case(-1):
+		if (m_speed == 0 )
+		{
+			m_gear = Gear::REVERSE;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	case(0):
+		m_gear = Gear::NEUTRAL;
+		return true;
+	case(1):
+	
+
+	}
 }
 
 car::~car()
