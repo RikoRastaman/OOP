@@ -7,7 +7,13 @@ int main()
 {
 	car car1;
 	car1.TurnOnEngine();
-	car1.SetGear(42);
+	car1.SetGear(-1);
+	car1.SetSpeed(19);
+	
 	//car1.TurnOffEngine();
-	std::cout << car1.getGear() << std::endl;
+	std::cout << car1.getSpeed() << std::endl;
+	std::cout << car1.getDirection() << std::endl;
+	car1.SetSpeed(0);
+	std::cout << "stop" << std::endl;
+	std::cout << car1.getDirection() << std::endl;
 }

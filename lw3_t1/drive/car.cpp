@@ -95,16 +95,79 @@ bool car::TurnOffEngine()
 
 bool car::SetSpeed(int speed)
 {
-	m_speed = speed;
-	return true; //add
+	if (speed == 0)
+	{
+		m_speed = speed;
+		m_direction = Direction::STAND_STILL;
+		return true;
+	}
+
+	if (!m_engine)
+	{
+		return false;
+	}
+	switch (m_gear)
+	{
+	case Gear::REVERSE:
+		if (speed <= REVERSE_SPEED.gear_maxSpeed && speed >= REVERSE_SPEED.gear_minSpeed)
+		{
+			m_speed = speed;
+			m_direction = Direction::BACKWARD;
+			return true;
+		}
+		return false;
+	case Gear::NEUTRAL:
+		if (m_speed < speed)
+		{
+			return false;
+		}
+		m_speed = speed;
+		return true;
+	case Gear::FIRST:
+		if (speed <= FIRST_SPEED.gear_maxSpeed && speed >= FIRST_SPEED.gear_minSpeed)
+		{
+			m_speed = speed;
+			m_direction = Direction::FORWARD;
+			return true;
+		}
+	case Gear::SECOND:
+		if (speed <= SECOND_SPEED.gear_maxSpeed && speed >= SECOND_SPEED.gear_minSpeed)
+		{
+			m_speed = speed;
+			m_direction = Direction::FORWARD;
+			return true;
+		}
+	case Gear::THIRD:
+		if (speed <= THIRD_SPEED.gear_maxSpeed && speed >= THIRD_SPEED.gear_minSpeed)
+		{
+			m_speed = speed;
+			m_direction = Direction::FORWARD;
+			return true;
+		}
+	case Gear::FOURTH:
+		if (speed <= FOURTH_SPEED.gear_maxSpeed && speed >= FOURTH_SPEED.gear_minSpeed)
+		{
+			m_speed = speed;
+			m_direction = Direction::FORWARD;
+			return true;
+		}
+	case Gear::FIFTH:
+		if (speed <= FOURTH_SPEED.gear_maxSpeed && speed >= FOURTH_SPEED.gear_minSpeed)
+		{
+			m_speed = speed;
+			m_direction = Direction::FORWARD;
+		}
+	default:
+		return false;
+	}
 }
 
 bool car::SetGear(int gear)
 {
-	//if (m_gear == Gear(gear))
-	//{
-	//	return true;
-	//}
+	if (m_gear == Gear(gear))
+	{
+		return true;
+	}
 
 	if (!m_engine)
 	{
@@ -113,36 +176,56 @@ bool car::SetGear(int gear)
 
 	switch(gear)
 	{ 
-	case(-1):
-		if (m_speed == 0)
-		{
-			m_gear = Gear::REVERSE;
+		case -1:
+			if (m_speed == 0)
+			{
+				m_gear = Gear::REVERSE;
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		case 0:
+			m_gear = Gear::NEUTRAL;
 			return true;
-		}
-		else
-		{
+		case 1:
+			if (m_speed <= FIRST_SPEED.gear_maxSpeed && m_speed >= FIRST_SPEED.gear_minSpeed)
+			{
+				m_gear = Gear::FIRST;
+				return true;
+			}
 			return false;
-		}
-	case(0):
-		m_gear = Gear::NEUTRAL;
-		return true;
-	case(1):
-		m_gear = Gear::FIRST;
-		return true;
-	case(2):
-		m_gear = Gear::SECOND;
-		return true;
-	case(3):
-		m_gear = Gear::THIRD;
-		return true;
-	case(4):
-		m_gear = Gear::FOURTH;
-		return true;
-	case(5):
-		m_gear = Gear::FIFTH;
-		return true;
-	default:
-		return false;
+		case 2:
+			if (m_speed <= SECOND_SPEED.gear_maxSpeed && m_speed >= SECOND_SPEED.gear_minSpeed)
+			{
+				m_gear = Gear::SECOND;
+				return true;
+			}
+			return false;
+		case 3:
+			if (m_speed <= THIRD_SPEED.gear_maxSpeed && m_speed >= THIRD_SPEED.gear_minSpeed)
+			{
+				m_gear = Gear::THIRD;
+				return true;
+			}
+			return false;
+		case 4:
+			if (m_speed <= FOURTH_SPEED.gear_maxSpeed && m_speed >= FOURTH_SPEED.gear_minSpeed)
+			{
+				m_gear = Gear::FOURTH;
+				return true;
+			}
+			return false;
+		case 5:
+			if (m_speed <= FIFTH_SPEED.gear_maxSpeed && m_speed >= FIFTH_SPEED.gear_minSpeed)
+			{
+				m_gear = Gear::FIFTH;
+				return true;
+			}
+			return false;
+		default:
+			return false;
 	}
 }
 
