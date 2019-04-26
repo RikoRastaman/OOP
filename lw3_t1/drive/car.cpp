@@ -76,7 +76,7 @@ std::string car::getGear() const
 
 bool car::TurnOnEngine()
 {
-	if (!m_engine)
+	if (!m_engine && m_speed == 0 && m_gear == Gear::NEUTRAL)
 	{
 		return m_engine = true;
 	}
@@ -190,6 +190,15 @@ bool car::SetGear(int gear)
 			m_gear = Gear::NEUTRAL;
 			return true;
 		case 1:
+			if (m_gear == Gear::REVERSE) 
+			{
+				if (m_speed == 0)
+				{
+					m_gear = Gear::FIRST;
+					return true;
+				}
+				return false;
+			}
 			if (m_speed <= FIRST_SPEED.gear_maxSpeed && m_speed >= FIRST_SPEED.gear_minSpeed)
 			{
 				m_gear = Gear::FIRST;

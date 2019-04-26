@@ -13,7 +13,9 @@ int main()
 	//car1.TurnOffEngine();
 	std::cout << car1.getSpeed() << std::endl;
 	std::cout << car1.getDirection() << std::endl;
-	car1.SetSpeed(0);
-	std::cout << "stop" << std::endl;
+	car1.SetGear(0);
 	std::cout << car1.getDirection() << std::endl;
+	std::cout << car1.getGear() << std::endl;
+	car1.SetGear(-1);
+	std::cout << car1.getGear() << std::endl;
 }
