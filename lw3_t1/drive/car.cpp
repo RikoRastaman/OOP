@@ -76,21 +76,23 @@ std::string car::getGear() const
 
 bool car::TurnOnEngine()
 {
-	if (!m_engine && m_speed == 0 && m_gear == Gear::NEUTRAL)
+	if (!m_engine)
 	{
-		return m_engine = true;
+		m_engine = true;
+		return true;
 	}
-	return false;
+	return true;
 }
 
 bool car::TurnOffEngine()
 {
-	if (m_engine)
+	if (!m_engine) return true;
+	if (m_engine && m_speed == 0 && m_gear == Gear::NEUTRAL)
 	{
 		m_engine = false;
 		return true;
 	}
-	return true;
+	return false;
 }
 
 bool car::SetSpeed(int speed)
@@ -130,6 +132,7 @@ bool car::SetSpeed(int speed)
 			m_direction = Direction::FORWARD;
 			return true;
 		}
+		return false;
 	case Gear::SECOND:
 		if (speed <= SECOND_SPEED.gear_maxSpeed && speed >= SECOND_SPEED.gear_minSpeed)
 		{
@@ -137,6 +140,7 @@ bool car::SetSpeed(int speed)
 			m_direction = Direction::FORWARD;
 			return true;
 		}
+		return false;
 	case Gear::THIRD:
 		if (speed <= THIRD_SPEED.gear_maxSpeed && speed >= THIRD_SPEED.gear_minSpeed)
 		{
@@ -144,6 +148,7 @@ bool car::SetSpeed(int speed)
 			m_direction = Direction::FORWARD;
 			return true;
 		}
+		return false;
 	case Gear::FOURTH:
 		if (speed <= FOURTH_SPEED.gear_maxSpeed && speed >= FOURTH_SPEED.gear_minSpeed)
 		{
@@ -151,12 +156,15 @@ bool car::SetSpeed(int speed)
 			m_direction = Direction::FORWARD;
 			return true;
 		}
+		return false;
 	case Gear::FIFTH:
-		if (speed <= FOURTH_SPEED.gear_maxSpeed && speed >= FOURTH_SPEED.gear_minSpeed)
+		if (speed <= FIFTH_SPEED.gear_maxSpeed && speed >= FIFTH_SPEED.gear_minSpeed)
 		{
 			m_speed = speed;
 			m_direction = Direction::FORWARD;
+			return true;
 		}
+		return false;
 	default:
 		return false;
 	}
@@ -190,7 +198,7 @@ bool car::SetGear(int gear)
 			m_gear = Gear::NEUTRAL;
 			return true;
 		case 1:
-			if (m_gear == Gear::REVERSE) 
+			if (m_gear == Gear::REVERSE)
 			{
 				if (m_speed == 0)
 				{
@@ -199,6 +207,11 @@ bool car::SetGear(int gear)
 				}
 				return false;
 			}
+			if (m_gear == Gear::NEUTRAL && m_direction == Direction::BACKWARD)
+			{
+				return false;
+			}
+			
 			if (m_speed <= FIRST_SPEED.gear_maxSpeed && m_speed >= FIRST_SPEED.gear_minSpeed)
 			{
 				m_gear = Gear::FIRST;

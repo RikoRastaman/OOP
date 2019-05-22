@@ -41,4 +41,3 @@ private:
 	const speedRange FOURTH_SPEED = { 40, 60 };
 	const speedRange FIFTH_SPEED = { 50, 150 };
 };
-
