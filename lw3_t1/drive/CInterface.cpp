@@ -19,6 +19,7 @@ void CInterface::ShowInfo(car & car)const
 	m_output << car.getDirection() << std::endl;
 	m_output << "Speed: " << car.getSpeed() << std::endl;
 	m_output << "Gear: " << car.getGear() << std::endl;
+	m_output << std::endl;
 }
 
 bool CInterface::SetGearByInterface(std::string& str)

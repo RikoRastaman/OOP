@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "car.h"
+#include <string>
 
+const std::string GEAR_ERROR = "undefined gear";
+const std::string DIRECTION_ERROR = "undefined direction";
 
 car::car()
 {
@@ -37,7 +40,7 @@ std::string car::getDirection() const
 	{
 		return "STAND STILL";
 	}
-	return "undefined direction";
+	return DIRECTION_ERROR;
 }
 
 std::string car::getGear() const
@@ -70,7 +73,7 @@ std::string car::getGear() const
 	{
 		return "FIFTH";
 	}
-	return "undefined gear";
+	return GEAR_ERROR;
 
 }
 
