@@ -2,15 +2,18 @@
 #include "car.h"
 #include "CInterface.h"
 #include "car.h"
+#include <string>
 
 const int MAX_SPEED = 150;
 const int MIN_SPEED = 0;
 const int MIN_GEAR = -1;
 const int MAX_GEAR = 5;
+const std::string UNKNOWN_COMMAND = "Unknown command";
+const std::string ERROR_GEAR = "Error to change gear. Gear: ";
+const std::string ERROR_SPEED = "Error to change speed. Speed: ";
 
 CInterface::CInterface(std::istream& input, std::ostream& output, car& car): m_input(input), m_output(output), m_car(car)
 {
-
 }
 
 void CInterface::ShowInfo(car & car)const
@@ -33,7 +36,7 @@ bool CInterface::SetGearByInterface(std::string& str)
 	}
 	else
 	{
-		m_output << "Error to change gear. Gear: " << m_car.getGear() << std::endl;
+		m_output << ERROR_GEAR << m_car.getGear() << std::endl;
 		return false;
 	}
 
@@ -50,7 +53,7 @@ bool CInterface::SetSpeedByInterface(std::string& str)
 	}
 	else
 	{
-		m_output << "Error to change speed. Speed: " << m_car.getSpeed() << std::endl;
+		m_output << ERROR_SPEED << m_car.getSpeed() << std::endl;
 		return false;
 	}
 }
@@ -100,7 +103,7 @@ void CInterface ::InicialCommand()
 		}
 		else
 		{
-			m_output << "Unknown command" << std::endl;
+			m_output << UNKNOWN_COMMAND << std::endl;
 		}
 		
 	}

@@ -1,6 +1,4 @@
-﻿
-#include "pch.h"
-
+﻿#include "pch.h"
 #include "car.h"
 #include "CInterface.h"
 #include <iostream>

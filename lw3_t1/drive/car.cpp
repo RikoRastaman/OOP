@@ -17,7 +17,6 @@ car::car()
 
 int car::getSpeed() const
 {
-
 	return m_speed;
 }
 
