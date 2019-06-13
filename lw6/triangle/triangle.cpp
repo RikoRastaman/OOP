@@ -10,7 +10,7 @@ int main()
 
 	while (!std::cin.eof())
 	{
-		std::cout << "Enter triangle sizes (first) (second) (third): " << std::endl;
+		std::cout << "Enter triangle sides sizes (first) (second) (third): " << std::endl;
 		std::cin >> side1 >> side2 >> side3;
 
 		try
