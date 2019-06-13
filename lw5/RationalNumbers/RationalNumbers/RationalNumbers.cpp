@@ -3,7 +3,7 @@
 #include <iostream>
 int main()
 {
-	CRational rational(5, 3333);
+	CRational rational(-1, -2);
 	std::cout << rational.GetNumerator() << "/" << rational.GetDenominator();
     return 0;
 }
