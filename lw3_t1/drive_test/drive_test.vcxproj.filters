@@ -15,12 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FindMaxEx_test.cpp">
+    <ClCompile Include="drive_test.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\drive\car.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\FindMaxEx\FindMaxExFunctions.h">
+    <ClInclude Include="..\drive\car.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

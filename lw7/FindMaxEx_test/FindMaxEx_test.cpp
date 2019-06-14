@@ -43,7 +43,7 @@ TEST_CASE("Find man with max height")
 {
 	SMan highestMan;
 
-	REQUIRE(FindMax(men, highestMan, IsHeigher));
+	REQUIRE((FindMax(men, highestMan, IsHeigher)));
 
 	VerifyMan(highestMan, Ivan);
 }
@@ -66,14 +66,14 @@ TEST_CASE("Test FindMax function with empty array")
 	REQUIRE(maxNum == 0);
 }
 
-TEST_CASE("Exception check FindMax function with empty last parameter")
+TEST_CASE("Exception check FindMax without last parametr")
 {
 	float maxNum = 0;
 	REQUIRE_NOTHROW(FindMax({}, maxNum));
 	REQUIRE(( maxNum == 0));
 }
 
-TEST_CASE("Find max element in integers array by FindMax function without third parameter")
+TEST_CASE("Find max without third parameter")
 {
 	int maxNum = 0;
 	REQUIRE(FindMax({ -1, 1, 0, 15, 5 }, maxNum));
@@ -84,7 +84,7 @@ TEST_CASE("Find min element in chars array by FindMax function")
 {
 	char minCh = '#';
 	REQUIRE(FindMax({ 'a', 'b', 'c', 'e', 'd' }, minCh, [](const auto& lhc, const auto& rhc) {
-		return (lhc < rhc);
+		return (lhc > rhc);
 	}));
-	REQUIRE(minCh == 'e');
+	REQUIRE(minCh == 'a');
 }

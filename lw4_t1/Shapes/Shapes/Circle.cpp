@@ -45,11 +45,11 @@ std::string CCircle::GetSpecialInfo() const
 		<< m_center.x 
 		<< ", " 
 		<< m_center.y 
-		<< ") " << '\n'
+		<< ") " 
 		<< "Radius = "
-		<< m_radius << '\n'
+		<< m_radius
 		<< "Fill color = #"
-		<< m_fillColor << '\n';
+		<< m_fillColor;
 
 	return buffer.str();
 }

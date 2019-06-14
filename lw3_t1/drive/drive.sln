@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "drive", "drive.vcxproj", "{72813493-A3CA-4A0E-9AD1-EC4C253146F2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "drive_test", "..\drive_test\drive_test.vcxproj", "{CC46A622-A09C-409F-94CE-4BB09378EA58}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{72813493-A3CA-4A0E-9AD1-EC4C253146F2}.Release|x64.Build.0 = Release|x64
 		{72813493-A3CA-4A0E-9AD1-EC4C253146F2}.Release|x86.ActiveCfg = Release|Win32
 		{72813493-A3CA-4A0E-9AD1-EC4C253146F2}.Release|x86.Build.0 = Release|Win32
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Debug|x64.ActiveCfg = Debug|x64
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Debug|x64.Build.0 = Debug|x64
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Debug|x86.ActiveCfg = Debug|Win32
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Debug|x86.Build.0 = Debug|Win32
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Release|x64.ActiveCfg = Release|x64
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Release|x64.Build.0 = Release|x64
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Release|x86.ActiveCfg = Release|Win32
+		{CC46A622-A09C-409F-94CE-4BB09378EA58}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

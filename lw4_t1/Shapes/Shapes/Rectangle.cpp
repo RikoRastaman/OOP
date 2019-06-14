@@ -54,16 +54,16 @@ std::string CRectangle::GetSpecialInfo() const
 		<< m_leftTopVertex.x
 		<< ", "
 		<< m_leftTopVertex.y
-		<< ")" << '\n' << "Right bottom point("
+		<< ")" << "Right bottom point("
 		<< GetRightBottom().x
 		<< ", "
 		<< GetRightBottom().y
-		<< ") " << '\n' << "Width = " 
-		<< m_width << '\n'
-		<< "Height = "
-		<< m_height << '\n'
+		<< ") "  << "Width = " 
+		<< m_width 
+		<< " Height = "
+		<< m_height
 		<< "Fill color = #"
-		<< m_fillColor << '\n';
+		<< m_fillColor;
 
 	return buffer.str();
 }

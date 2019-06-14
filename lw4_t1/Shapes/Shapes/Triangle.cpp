@@ -55,11 +55,11 @@ std::string CTriangle::GetSpecialInfo() const
 {
 	std::stringstream buffer;
 	buffer << std::fixed << std::setprecision(2);
-	buffer << "Vertex 1 (" << m_vertex1.x << ", " << m_vertex1.y << ") " << '\n'
-		<< "Vertex 2 (" << m_vertex2.x << ", " << m_vertex2.y << ") " << '\n'
-		<< "Vertex 3 (" << m_vertex3.x << ", " << m_vertex3.y << ") " << '\n'
+	buffer << "Vertex 1 (" << m_vertex1.x << ", " << m_vertex1.y << ")" 
+		<< "Vertex 2 (" << m_vertex2.x << ", " << m_vertex2.y << ")" 
+		<< "Vertex 3 (" << m_vertex3.x << ", " << m_vertex3.y << ")" 
 		<< "Fill color = #"
-		<< m_fillColor << '\n';
+		<< m_fillColor ;
 
 	return buffer.str();
 }

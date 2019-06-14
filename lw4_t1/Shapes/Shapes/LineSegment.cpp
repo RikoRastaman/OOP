@@ -41,11 +41,11 @@ std::string CLineSegment::GetSpecialInfo() const
 		<< m_startPoint.x
 		<< ", "
 		<< m_startPoint.y
-		<< ")" << '\n' << "End point ("
+		<< ")"  << "End point ("
 		<< m_endPoint.x
 		<< ", "
 		<< m_endPoint.y
-		<< ")" << '\n';
+		<< ")";
 
 	return buffer.str();
 }
